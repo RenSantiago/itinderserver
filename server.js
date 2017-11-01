@@ -73,7 +73,8 @@ var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 // }
 // });
 app.get('/' , function(req,res){
-    res.send('okay');
+    console.log('haha');
+    res.send('okay haha');
 })
 // app.get('/pagecount', function (req, res) {
 // try to initialize the db on every request if it's not already
