@@ -75,20 +75,20 @@ morgan  = require('morgan');
 app.get('/' , function(req,res){
     res.send('okay');
 })
-app.get('/pagecount', function (req, res) {
+// app.get('/pagecount', function (req, res) {
 // try to initialize the db on every request if it's not already
 // initialized.
-if (!db) {
-initDb(function(err){});
-}
-if (db) {
-db.collection('counts').count(function(err, count ){
-  res.send('{ pageCount: ' + count + '}');
-});
-} else {
-res.send('{ pageCount: -1 }');
-}
-});
+// if (!db) {
+// initDb(function(err){});
+// }
+// if (db) {
+// db.collection('counts').count(function(err, count ){
+//   res.send('{ pageCount: ' + count + '}');
+// });
+// } else {
+// res.send('{ pageCount: -1 }');
+// }
+// });
 
 // error handling
 app.use(function(err, req, res, next){
@@ -96,9 +96,9 @@ console.error(err.stack);
 res.status(500).send('Something bad happened!');
 });
 
-initDb(function(err){
-console.log('Error connecting to Mongo. Message:\n'+err);
-});
+// initDb(function(err){
+// console.log('Error connecting to Mongo. Message:\n'+err);
+// });
 
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
