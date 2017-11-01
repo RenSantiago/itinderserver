@@ -1,7 +1,7 @@
 //  OpenShift sample Node application
 var express = require('express'),
-app     = express(),
-morgan  = require('morgan');
+app     = express();
+
 
 
 // app.engine('html', require('ejs').renderFile);
